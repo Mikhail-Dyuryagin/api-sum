@@ -5,7 +5,7 @@ pipeline {
   stages {
     stage('Build') {
       steps {
-        sh 'go build -o APP/usr/bin'
+        sh 'go build -o APP/usr/bin/api-sum main.go'
       }
     }
     stage('BuildPackage') {
