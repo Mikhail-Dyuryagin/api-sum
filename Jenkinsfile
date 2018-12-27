@@ -13,7 +13,7 @@ pipeline {
 	sh '''       
         find . -type f ! -regex 'md5sum.sh' ! -regex '.*.hg.*' ! -regex '.*?debian-binary.*' ! -regex '.*?DEBIAN.*' -printf '%P ' | xargs md5sum > DEBIAN
         '''
-        sh 'fakeroot dpkg-deb --build package'
+        sh 'fakeroot dpkg-deb --build APP'
         sh 'mv package.deb api-sum_1.0-1_all.deb'
       }
     }
